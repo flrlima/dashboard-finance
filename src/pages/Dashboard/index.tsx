@@ -134,32 +134,7 @@ const Dashboard: React.FC = () => {
                 value: totalGains,
                 percent: Number(gainsPercent.toFixed(1)),
                 // color: '#F7931B'
-                color: '#Cece'
-            },
-            {
-                name: 'Entradas',
-                value: totalGains,
-                percent: Number(gainsPercent.toFixed(1)),
-                // color: '#F7931B'
                 color: '#4CAF50'
-            },
-            {
-                name: 'Saídas',
-                value: totalExpenses,
-                percent: Number(expensesPercent.toFixed(1)),
-                color: '#E44C4E'
-            },
-            {
-                name: 'Saídas',
-                value: totalExpenses,
-                percent: Number(expensesPercent.toFixed(1)),
-                color: '#4C8888'
-            },
-            {
-                name: 'Saídas',
-                value: totalExpenses,
-                percent: Number(expensesPercent.toFixed(1)),
-                color: '#E44C4E'
             },
             {
                 name: 'Saídas',
@@ -213,7 +188,13 @@ const Dashboard: React.FC = () => {
                 amountOutput
             }
         })
-    },[]);
+        .filter(item => {
+            const currentMonth = new Date().getMonth();
+            const currentYear = new Date().getFullYear();
+            return (yearSelected === currentYear && item.monthNumber <= currentMonth) 
+                    || (yearSelected < currentYear)
+        })
+    },[yearSelected]);
 
     const handlerMonthSelected = (month: string) => {
         try {
