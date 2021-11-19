@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { Container, Content } from './styles';
 
 import ContentHeader from '../../components/ContentHeader';
@@ -283,23 +283,23 @@ const Dashboard: React.FC = () => {
         })
     },[yearSelected]);
 
-    const handlerMonthSelected = (month: string) => {
+    const handlerMonthSelected = useCallback((month: string) => {
         try {
             const parseMonth = Number(month);
             setMonthSelected(parseMonth);
         } catch {
             throw new Error('Mês inválido. Use somente 12 meses');
         }
-    };
+    },[]);
 
-    const handlerYearSelected = (year: string) => {
+    const handlerYearSelected = useCallback((year: string) => {
         try {
             const parseYear = Number(year);
             setYearSelected(parseYear);
         } catch {
             throw new Error('Ano inválido.');
         }
-    };
+    },[]);
 
     return (
         <Container>

@@ -45,7 +45,7 @@ const HistoryBox: React.FC<IHistoryBoxProps> = ({
                         stroke={lineColorAmountEntry}
                         strokeWidth={5}
                         dot={{ r: 5 }}
-                        activeDot={{ r: 18 }}
+                        activeDot={{ r: 20 }}
                     />
                     <Line
                         type="monotone"
@@ -54,7 +54,7 @@ const HistoryBox: React.FC<IHistoryBoxProps> = ({
                         stroke={lineColorAmountOutput}
                         strokeWidth={5}
                         dot={{ r: 5 }}
-                        activeDot={{ r: 18 }}
+                        activeDot={{ r: 20 }}
                     />
                 </LineChart>
             </ResponsiveContainer>
