@@ -6,6 +6,8 @@ import SelectInput from '../../components/SelectInput';
 import WalletBox from '../../components/WalletBox';
 import MessageBox from '../../components/MessageBox';
 import HistoryBox from '../../components/HistoryBox';
+import PieChart from '../../components/PieChartBox';
+import BarChartsBox from '../../components/BarChartsBox';
 
 import listOfMonths from '../../utils/months';
 import expenses from '../../repositories/expenses';
@@ -13,7 +15,6 @@ import gains from '../../repositories/gains';
 import happyImg from '../../assets/happy.svg';
 import saDImg from '../../assets/sad.svg';
 import grinningImg from '../../assets/grinning.svg';
-import PieChart from '../../components/PieChartBox';
 
 const Dashboard: React.FC = () => {
 
@@ -148,6 +149,80 @@ const Dashboard: React.FC = () => {
 
     }, [totalGains, totalExpenses]);
 
+    const relationExpenseRecurrentVesusEventual = useMemo(() => {
+        let amountRecurrent = 0;
+        let amountEventual = 0;
+
+        expenses.filter((expense) => {
+            const date = new Date(expense.date);
+            const month = date.getMonth() + 1;
+            const year = date.getFullYear();
+
+            return month === monthSelected && year === yearSelected;
+        })
+        .forEach((expense) => {
+            if(expense.frequency === 'recorrente')
+                return amountRecurrent += Number(expense.amount);
+            else
+                return amountEventual += Number(expense.amount);
+        });
+
+        const total = amountRecurrent + amountEventual;
+
+        return [
+            {
+                name: 'Recorrentes',
+                amount: amountRecurrent,
+                percent: Number(((amountRecurrent / total) * 100).toFixed(1)),
+                color: '#4E41F0'
+            },
+            {
+                name: 'Eventuais',
+                amount: amountEventual,
+                percent: Number(((amountEventual / total) * 100).toFixed(1)),
+                color: '#E44C4E'
+            }
+        ];
+
+    },[monthSelected, yearSelected]);
+
+    const relationGainRecurrentVesusEventual = useMemo(() => {
+        let amountRecurrent = 0;
+        let amountEventual = 0;
+
+        gains.filter((gain) => {
+            const date = new Date(gain.date);
+            const month = date.getMonth() + 1;
+            const year = date.getFullYear();
+
+            return month === monthSelected && year === yearSelected;
+        })
+        .forEach((gain) => {
+            if(gain.frequency === 'recorrente')
+                return amountRecurrent += Number(gain.amount);
+            else
+                return amountEventual += Number(gain.amount);
+        });
+
+        const total = amountRecurrent + amountEventual;
+
+        return [
+            {
+                name: 'Recorrentes',
+                amount: amountRecurrent,
+                percent: Number(((amountRecurrent / total) * 100).toFixed(1)),
+                color: '#4E41F0'
+            },
+            {
+                name: 'Eventuais',
+                amount: amountEventual,
+                percent: Number(((amountEventual / total) * 100).toFixed(1)),
+                color: '#E44C4E'
+            }
+        ];
+
+    },[monthSelected, yearSelected]);
+
     const historyData = useMemo(() => {
         return listOfMonths.map((_, month) => {
 
@@ -267,6 +342,16 @@ const Dashboard: React.FC = () => {
                     data={historyData}
                     lineColorAmountEntry="#4CAF50"
                     lineColorAmountOutput="#E44C4E"
+                />
+
+                <BarChartsBox 
+                    title="Saídas"
+                    data={relationExpenseRecurrentVesusEventual}
+                />
+                
+                <BarChartsBox 
+                    title="Entradas"
+                    data={relationGainRecurrentVesusEventual}
                 />
 
             </Content>
