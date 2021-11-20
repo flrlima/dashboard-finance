@@ -1,8 +1,12 @@
 import React from 'react';
 import AppRoutes from './app.routes';
+import AuthRoutes from './auth.routes';
 
-const Routes: React.FC = () => (    
-        <AppRoutes/>
+const Routes: React.FC = () => (
+        <>
+                {/* <AppRoutes /> */}
+                <AuthRoutes />
+        </>
 )
 
 export default Routes;
