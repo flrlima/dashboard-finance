@@ -1,11 +1,7 @@
-# Está é a carteira digital online
+# Esta é a carteira digital online
 
 ## Objetivo:
- Explorar biblioteca de gráficos recharts com intuído de aprimorar minhas habilidades e
-principalmente trabalhar com a responsividade em diversos dispositivos sem perder a qualidade das informações.
-a finalidade é didática, de quebra irei disponibilizar em breve para uso de todos como uma ferramenta
-voltada ao controle de gastos mensais. Isso mesmo, ajudar na organização financeira com lançamentos de entrada e saída 
-
+ Explorar a biblioteca de gráficos recharts, com o intuito de aprimorar minhas habilidades e principalmente trabalhar com a responsividade em diversos dispositivos, sem perder a qualidade das informações. A finalidade é didática: de quebra irei disponibilizar em breve, para uso de todos, como uma ferramenta voltada ao controle de gastos mensais. Isso mesmo: ajudar na organização financeira com lançamentos de entrada e saída!
  A ferramenta não tem objetivo de controlar ou totalizar seu saldo em conta ou gerenciar seus cartões
 simplesmente entrada e saída por mês. Todos os meses vc pode controlar em sua tela
 
