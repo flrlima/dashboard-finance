@@ -1,50 +1,62 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# Está é a carteira digital online
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Objetivo:
+ Explorar biblioteca de gráficos recharts com intuído de aprimorar minhas habilidades e
+principalmente trabalhar com a responsividade em diversos dispositivos sem perder a qualidade das informações.
+a finalidade é didática, de quebra irei disponibilizar em breve para uso de todos como uma ferramenta
+voltada ao controle de gastos mensais. Isso mesmo, ajudar na organização financeira com lançamentos de entrada e saída 
 
-## Available Scripts
+ A ferramenta não tem objetivo de controlar ou totalizar seu saldo em conta ou gerenciar seus cartões
+simplesmente entrada e saída por mês. Todos os meses vc pode controlar em sua tela
 
-In the project directory, you can run:
+## Funcionalidades
+- Login
+- cadastro de entradas e saídas 
+- monitoramento de recorrência ou eventualidades
+- tudo é trasnformado em gráfico para facilitar visualização
+- temas Dark e Light 
+- responsividade da tela do PC até o mobile em sua mão 
+
+## Futuro
+A funcionalidade COFRE será implementada. Nela terá o acúmulo de dinheiro que sobrou em cada mês (ou faltou)
+Teremos o Total dos totais.
+
+# Atenção - vamos lá
+Se clicou errado, não tem problema, é só sair.
+
+Mas se vc chegou até aqui deve ter interesse em saber mais sobre o projeto, 
+e sua intenção é contribuir, bem vindo.
+
+## Fique a vontade para baixar o código.
+Deixarei aqui instruções para executar em sua máquina.
+
+### Estou partindo do princípio que já tem sua máquina configurada com git, node, react, um editor ou IDE,todos em versões atuais.
+
+Inicialmente é necessário clonar o diretório
+
+Use o comando 
+### `git clone URLDOREPOSITORIO`
+
+Obs: URLDOREPOSITORIO está ali no início 
+
+Após clonar e ter o projeto em sua máquina, execute com um editor da sua preferência
+(Eu uso o VSCode)
+
+Abra o terminal com o diretório baixado e o seu primeiro passo deve ser executar o seguinte comando 
+
+### `yarn install ou npm install`
+
+Após todas as dependências e pacotes serem baixados execute 
 
 ### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+O comando acima vai abrir em seu navegador o seguinte endereço
+ http://localhost:3000
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### inspecione, altere, ajuste, incremente, divirta-se e contribua
 
-### `yarn test`
+# Lembre-se 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Críticas são sempre bem vindas. Desde que esteja acompanhada de uma proposta de melhoria 
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-=======
-# dashboard-finance
->>>>>>> 5d627c8d2e8054ac777e2534845fedcd8104daa8
+Obrigado 🙂
