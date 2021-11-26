@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface IAuthContext {
     logged: boolean;
@@ -18,6 +19,7 @@ const AuthProvider: React.FC = ({children}) => {
     const signIn = (email: string, password: string) => {
         if(email === 'flrlima@email.com' && password === '123'){
             localStorage.setItem('@minha-carteira-digital-dentro-do-bolso:logged', 'true');
+            <Link to="/"></Link>
         }
         else {
             alert('Usuário ou Senha inválidos!');
@@ -25,8 +27,9 @@ const AuthProvider: React.FC = ({children}) => {
     }
 
     const signOut = () => {
-        localStorage.removeItem('@minha-carteira-digital-dentro-do-bolso:logged');
+        localStorage.setItem('@minha-carteira-digital-dentro-do-bolso:logged', 'false');
         setLogged(false);
+        <Link to="/"></Link>
     }
 
     return (

@@ -52,3 +52,28 @@ export const MenuLink= styled.a`
         margin-right: 5px;
     }
 `;
+
+export const MenuItemButton = styled.button`
+    
+    font-size: 16px;
+    color: ${props => props.theme.colors.info};
+    text-decoration: none;
+
+    margin: 7px 0;
+    display: flex;
+    align-items: center;
+
+    background: none;
+
+    transition: opacity .3s;
+
+    &:hover {
+        opacity: .6;        
+        transform: translateX(10px);
+    }
+
+    > svg {
+        font-size: 22px;
+        margin-right: 5px;
+    }
+`;
