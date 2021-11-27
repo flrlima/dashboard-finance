@@ -17,6 +17,13 @@ export const Container = styled.div`
 
     display: flex;
 
+    @media(max-width: 1200px){
+        display: flex;
+
+        width: 100%;
+        height: auto;
+    }
+
 `;
 
 export const SideLeft = styled.aside`
@@ -35,7 +42,7 @@ export const SideRight = styled.main`
     max-width: 180px;
 
     display: flex;
-    justify-content: center;
+    justify-content: left;
 
     margin-right: 30px;
 

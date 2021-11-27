@@ -4,7 +4,6 @@ interface ILegendProps {
     color: string;
 }
 
-
 export const Container = styled.div`
 
     width: 100%;
@@ -34,6 +33,10 @@ export const Header = styled.header`
             padding-bottom: 20px;
             margin-left: 10px;
         }
+    
+    @media(max-width: 1200px){
+        flex-direction: column;
+    }
 `;
 
 export const LegendContainer = styled.ul`
@@ -48,7 +51,7 @@ export const Legend = styled.li<ILegendProps>`
     align-items: center;
 
     margin-bottom: 10px;
-    margin-left: 10px;
+    margin-left: 16px;
 
     > div {
         background-color: ${props => props.color};
@@ -65,20 +68,12 @@ export const Legend = styled.li<ILegendProps>`
     > span {
         margin-left: 5px;
     }
+
+    @media(max-width: 1200px){
+        > div {
+            width: 40px;
+            height: 40px;
+        }
+    }
 `;
 
-
-
-// ::-webkit-scrollbar {
-//     width: 10px;
-
-// }
-
-// ::-webkit-scrollbar-thumb { 
-//     background-color: ${props => props.theme.colors.info};
-//     border-radius: 10px;
-// }
-
-// ::-webkit-scrollbar-track { 
-//     background-color: ${props => props.theme.colors.tertiary};
-// }
