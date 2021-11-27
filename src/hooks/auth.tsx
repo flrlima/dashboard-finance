@@ -17,13 +17,13 @@ const AuthProvider: React.FC = ({children}) => {
     })
 
     const signIn = (email: string, password: string) => {
-        if(email === 'flrlima@email.com' && password === '123'){
+        // if(email === 'flrlima@email.com' && password === '123'){
             localStorage.setItem('@minha-carteira-digital-dentro-do-bolso:logged', 'true');
-            <Link to="/"></Link>
-        }
-        else {
-            alert('Usuário ou Senha inválidos!');
-        }
+            // <Link to="/"></Link>
+        // }
+        // else {
+        //     alert('Usuário ou Senha inválidos!');
+        // }
     }
 
     const signOut = () => {

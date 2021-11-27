@@ -61,7 +61,7 @@ export const Container = styled.div<IContainerProps>`
 
     }
 
-    @media(max-width: 420px){
+    @media(max-width: 560px){
         width: 100%;
 
         > h1 {
