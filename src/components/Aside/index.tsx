@@ -1,38 +1,89 @@
-import React from 'react';
-import { Container, Header, LogImg, Title, MenuContainer, MenuLink } from './styles';
+import React, { useState } from 'react';
+import {
+    Container,
+    Header,
+    LogImg,
+    Title,
+    MenuContainer,
+    MenuLink,
+    MenuItemButton,
+    ToggleMenu,
+    ThemeToggleFooter,
+} from './styles';
 import logoImg from '../../assets/logo.svg';
-import { MdDashboard, MdArrowDownward, MdArrowUpward, MdExitToApp } from 'react-icons/md';
+import {
+    MdDashboard,
+    MdArrowDownward,
+    MdArrowUpward,
+    MdExitToApp,
+    MdClose,
+    MdMenu,
+} from 'react-icons/md';
+
+import { useAuth } from '../../hooks/auth';
+import { useTheme } from '../../hooks/theme';
+import Toggle from '../Toggle';
 
 const Aside: React.FC = () => {
-    return(
-        <Container>
+
+    const { signOut } = useAuth();
+    const { toggleTheme, theme } = useTheme();
+
+    const [toggleMenuIsOpened, setToggleMenuIsOpened] = useState(false);
+    const [darkTheme, setDarkTheme] = useState(() => theme.title === 'dark' ? true : false);
+
+    const handleToggleMenu = () => {
+        setToggleMenuIsOpened(!toggleMenuIsOpened);
+    }
+
+    const handleChangeTheme = () => {
+        setDarkTheme(!darkTheme);
+        toggleTheme();
+    }
+
+    return (
+        <Container menuIsOpen={toggleMenuIsOpened}>
             <Header>
-                <LogImg src={logoImg} alt="Logo Minha Carteira Digital"/>
+                <ToggleMenu onClick={handleToggleMenu}>
+                    {toggleMenuIsOpened ? <MdClose /> : <MdMenu />}
+                </ToggleMenu>
+
+                <LogImg src={logoImg} alt="Logo Minha Carteira Digital" />
                 <Title>Minha Carteira</Title>
             </Header>
 
             <MenuContainer>
 
-                <MenuLink href="/dashboard">
+                <MenuLink href="/">
                     <MdDashboard />
                     Dashboard
                 </MenuLink>
-                
+
                 <MenuLink href="/list/entry-balance">
-                    <MdArrowDownward/>
+                    <MdArrowDownward />
                     Entradas
                 </MenuLink>
-                
+
                 <MenuLink href="/list/exit-balance">
-                    <MdArrowUpward/>
+                    <MdArrowUpward />
                     Saídas
                 </MenuLink>
-                
-                <MenuLink href="#">
-                    <MdExitToApp/>
+
+                <MenuItemButton onClick={signOut}>
+                    <MdExitToApp />
                     Sair
-                </MenuLink>
+                </MenuItemButton>
             </MenuContainer>
+
+            <ThemeToggleFooter menuIsOpen={toggleMenuIsOpened}>
+                <Toggle
+                    labelLeft="Light"
+                    labelRight="Dark"
+                    checked={darkTheme}
+                    onChange={handleChangeTheme}
+                />
+            </ThemeToggleFooter>
+
         </Container>
     );
 }

@@ -10,8 +10,7 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
 
-    background-color: #1B1F38;
-    /* background-color: ${props => props.theme.colors.success}; */
+    background:-webkit-gradient(linear, left top, left bottom, from(#000), to(#CCCCCC)) no-repeat;
 `;
 
 export const Logo = styled.div`
@@ -40,8 +39,10 @@ export const Form = styled.form`
 
     border-radius: 10px;
 
-    background-color: #313862;
-    /* background-color: ${props => props.theme.colors.info}; */
+    
+    background:-webkit-gradient(linear, left top, left bottom, from(#000), to(#CCCCCC)) no-repeat;
+    /* background-color: #313862; */
+    /* background-color: ${props => props.theme.colors.success}; */
 `;
 
 export const FormTitle = styled.h1`

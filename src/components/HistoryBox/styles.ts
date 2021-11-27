@@ -1,9 +1,25 @@
-import styled from 'styled-components';
+import styled, {keyframes, Keyframes} from 'styled-components';
+
+const animate = keyframes`
+
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    50%{
+        opacity: .3;
+    }
+
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+`;
 
 interface ILegendProps {
     color: string;
 }
-
 
 export const Container = styled.div`
 
@@ -16,6 +32,8 @@ export const Container = styled.div`
     padding: 15px 15px 5px;
 
     border-radius: 10px;
+
+    animation: ${animate} .8s;
 
     background-color: ${props => props.theme.colors.tertiary};
     color: ${props => props.theme.colors.white};
@@ -34,6 +52,10 @@ export const Header = styled.header`
             padding-bottom: 20px;
             margin-left: 10px;
         }
+    
+    @media(max-width: 1200px){
+        flex-direction: column;
+    }
 `;
 
 export const LegendContainer = styled.ul`
@@ -48,7 +70,7 @@ export const Legend = styled.li<ILegendProps>`
     align-items: center;
 
     margin-bottom: 10px;
-    margin-left: 10px;
+    margin-left: 16px;
 
     > div {
         background-color: ${props => props.color};
@@ -65,20 +87,12 @@ export const Legend = styled.li<ILegendProps>`
     > span {
         margin-left: 5px;
     }
+
+    @media(max-width: 1200px){
+        > div {
+            width: 40px;
+            height: 40px;
+        }
+    }
 `;
 
-
-
-// ::-webkit-scrollbar {
-//     width: 10px;
-
-// }
-
-// ::-webkit-scrollbar-thumb { 
-//     background-color: ${props => props.theme.colors.info};
-//     border-radius: 10px;
-// }
-
-// ::-webkit-scrollbar-track { 
-//     background-color: ${props => props.theme.colors.tertiary};
-// }

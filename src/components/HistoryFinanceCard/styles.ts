@@ -1,4 +1,21 @@
-import styled from 'styled-components';
+import styled, {keyframes, Keyframes} from 'styled-components';
+
+const animate = keyframes`
+
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    50%{
+        opacity: .3;
+    }
+
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+`;
 
 interface ITagProps {
     color: string;
@@ -21,6 +38,8 @@ export const Container = styled.li`
     transition: all .3s;
 
     position: relative;
+
+    animation: ${animate} .9s ease;
 
     &:hover {
         opacity: .7;
