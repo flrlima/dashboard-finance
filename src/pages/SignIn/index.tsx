@@ -38,7 +38,7 @@ const SignIn: React.FC = () => {
                 <Button type="submit">Acessar</Button>
 
             </Form>
-            <h1>CLIQUE e ENTRE</h1>
+            <h1><b>CLIQUE e ENTRE</b></h1>
         </Container>
     );
 }
