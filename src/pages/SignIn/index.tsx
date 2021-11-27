@@ -25,19 +25,20 @@ const SignIn: React.FC = () => {
                 <Input
                     placeholder="email@email.com"
                     type="email"
-                    required
+                    // required
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <Input
                     placeholder="senha"
                     type="password"
-                    required
+                    // required
                     onChange={(e) => setPassword(e.target.value)}
                 />
 
                 <Button type="submit">Acessar</Button>
 
             </Form>
+            <h1>CLIQUE e ENTRE</h1>
         </Container>
     );
 }

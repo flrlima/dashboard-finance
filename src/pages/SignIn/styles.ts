@@ -11,6 +11,10 @@ export const Container = styled.div`
     align-items: center;
 
     background:-webkit-gradient(linear, left top, left bottom, from(#000), to(#CCCCCC)) no-repeat;
+
+    > h1 {
+        color: ${props => props.theme.colors.success};
+    }
 `;
 
 export const Logo = styled.div`
