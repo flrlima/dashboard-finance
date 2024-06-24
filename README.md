@@ -1,5 +1,9 @@
 # Esta é a carteira digital online
 
+## Começe dando uma olhada por aqui:
+https://dash-finance.netlify.app
+não precisa se cadastrar, entrada franca para espiar o Dashboard
+
 ## Objetivo:
  Explorar a biblioteca de gráficos recharts, com o intuito de 
 aprimorar minhas habilidades e principalmente trabalhar com a 
